@@ -1,0 +1,6 @@
+C:\Users\marre\Documents\VscProjects\c#-Projects\Simple-TaskManagerCLITool\publish\TaskManagerCLI.exe
+C:\Users\marre\Documents\VscProjects\c#-Projects\Simple-TaskManagerCLITool\publish\TaskManagerCLI.dll
+C:\Users\marre\Documents\VscProjects\c#-Projects\Simple-TaskManagerCLITool\publish\TaskManagerCLI.deps.json
+C:\Users\marre\Documents\VscProjects\c#-Projects\Simple-TaskManagerCLITool\publish\TaskManagerCLI.runtimeconfig.json
+C:\Users\marre\Documents\VscProjects\c#-Projects\Simple-TaskManagerCLITool\publish\TaskManagerCLI.pdb
+C:\Users\marre\Documents\VscProjects\c#-Projects\Simple-TaskManagerCLITool\publish\Newtonsoft.Json.dll

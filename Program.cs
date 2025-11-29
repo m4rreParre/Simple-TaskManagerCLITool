@@ -9,6 +9,19 @@ namespace TaskManagerCLI;
 
 public class Program
 {
+    private static string TaskFilePath
+    {
+        get
+        {
+            string appDataPath = Environment.GetFolderPath(
+                Environment.SpecialFolder.ApplicationData
+            );
+            string appFolder = Path.Combine(appDataPath, "Simple-TaskManagerCLITool");
+            Directory.CreateDirectory(appFolder);
+            return Path.Combine(appFolder, "tasks.json");
+        }
+    }
+
     public static List<Task> tasks = new List<Task>();
 
     public class Task
@@ -94,13 +107,12 @@ public class Program
     public static void SaveTasks()
     {
         string json = JsonConvert.SerializeObject(tasks, Formatting.Indented);
-        string filePath = "tasks.json";
-        File.WriteAllText(filePath, json);
+        File.WriteAllText(TaskFilePath, json);
     }
 
     public static void LoadTasks()
     {
-        string filePath = "tasks.json";
+        string filePath = TaskFilePath;
 
         if (!File.Exists(filePath))
         {
@@ -131,7 +143,8 @@ public class Program
 
     public static void WriteTasks(List<Task> tasks, int selectedIndex)
     {
-        string tasksString = "";
+        string tasksString = ""; //Add later to write everything in one Console.WriteLine() to remove the flickering
+        //Needs to do the same for the clearing of the screen
 
         for (int i = 0; i < tasks.Count; i++)
         {

@@ -60,7 +60,15 @@ class UserInterface
         Program.LoadTasks();
         if (args.Length == 0)
         {
-            MenuHandler();
+            if (Program.tasks.Count <= 0)
+            {
+                Console.WriteLine("Ohh noo you have an empty task list:(");
+                Console.WriteLine("Try adding some tasks - use <tasks help> to get help");
+            }
+            else
+            {
+                MenuHandler();
+            }
         }
         else
         {
@@ -106,7 +114,7 @@ class UserInterface
                     break;
 
                 default:
-                    Console.WriteLine("Write task --help or task --h to show commands");
+                    Console.WriteLine("Write tasks --help or tasks --h to show commands");
                     break;
             }
         }
