@@ -7,10 +7,6 @@ Simple is key!
 ## Features
 
 - Interactive menu interface with keyboard navigation
-	  - Up arrow: navigating up
-	  - Down arrow: navigating down
-	  - SPACE: checks the task
-	  - ENTER: quit the tasks view
 - Add, remove, and edit tasks from the command line
 - Toggle task completion status (with SPACEBAR)
 - Persistent storage in JSON format
