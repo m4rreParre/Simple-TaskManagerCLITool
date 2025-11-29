@@ -1,0 +1,32 @@
+[
+  {
+    "TaskID": 1,
+    "WhatToDo": "Köp mjölk och bröd",
+    "Finished": false
+  },
+  {
+    "TaskID": 2,
+    "WhatToDo": "Ät inte mat",
+    "Finished": false
+  },
+  {
+    "TaskID": 3,
+    "WhatToDo": "Göra läxor i C#",
+    "Finished": true
+  },
+  {
+    "TaskID": 4,
+    "WhatToDo": "Träna på gymmet",
+    "Finished": true
+  },
+  {
+    "TaskID": 5,
+    "WhatToDo": "Ring mormor",
+    "Finished": false
+  },
+  {
+    "TaskID": 6,
+    "WhatToDo": "Spela minecraft",
+    "Finished": true
+  }
+]
