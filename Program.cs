@@ -45,24 +45,17 @@ public class Program
 
         public void ToggleTaskState()
         {
-            if (Finished == true)
-            {
-                Finished = false;
-            }
-            else
-            {
-                Finished = true;
-            }
+            Finished = !Finished;
         }
     }
 
     public static void EditTask(int ID, string whatToDo)
     {
-        for (int i = 0; i < tasks.Count; i++)
+        foreach (Task task in tasks)
         {
-            if (tasks[i].TaskID == ID)
+            if (task.TaskID == ID)
             {
-                tasks[i].WhatToDo = whatToDo;
+                task.WhatToDo = whatToDo;
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Task was changed!");
                 Console.ResetColor();
@@ -123,7 +116,7 @@ public class Program
         }
 
         string json = File.ReadAllText(filePath);
-        tasks = JsonConvert.DeserializeObject<List<Task>>(json);
+        tasks = JsonConvert.DeserializeObject<List<Task>>(json)!;
         int currentID = LoadID();
         Task.IdChange(currentID);
     }
@@ -131,11 +124,11 @@ public class Program
     static int LoadID()
     {
         int id = 0;
-        for (int i = 0; i < tasks.Count; i++)
+        foreach (Task task in tasks)
         {
-            if (tasks[i].TaskID > id)
+            if (task.TaskID > id)
             {
-                id = tasks[i].TaskID;
+                id = task.TaskID;
             }
         }
         return id + 1;
