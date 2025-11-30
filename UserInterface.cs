@@ -17,40 +17,45 @@ class UserInterface
         Console.CursorVisible = false;
         do
         {
+            // Clears the console
             Console.Write("\x1b[2J\x1b[H\x1b[2J\x1b[H");
             Program.WriteTasks(Program.tasks, selectedIndex);
+
             ConsoleKeyInfo keyInfo = Console.ReadKey(true);
             key = keyInfo.Key;
+
             selectedIndex = KeyPressHandler(key, selectedIndex);
             Program.SaveTasks();
+
         } while (key != ConsoleKey.Enter);
+
         Console.CursorVisible = true;
         return selectedIndex;
     }
 
     static int KeyPressHandler(ConsoleKey key, int selectedIndex)
     {
-        if (key == ConsoleKey.UpArrow)
+        switch (key)
         {
-            selectedIndex--;
-            if (selectedIndex < 0)
-            {
-                selectedIndex = Program.tasks.Count - 1; //wrapping
-                return selectedIndex;
-            }
-        }
-        else if (key == ConsoleKey.DownArrow)
-        {
-            selectedIndex++;
-            if (selectedIndex >= Program.tasks.Count)
-            {
-                selectedIndex = 0; //wrapping
-                return selectedIndex;
-            }
-        }
-        else if (key == ConsoleKey.Spacebar)
-        {
-            Program.ToggleTaskState(Program.tasks[selectedIndex].TaskID);
+            case ConsoleKey.UpArrow:
+                selectedIndex--;
+                if (selectedIndex < 0)
+                {
+                    selectedIndex = Program.tasks.Count - 1; // wrapping
+                    return selectedIndex;
+                }
+                break;
+            case ConsoleKey.DownArrow:
+                selectedIndex++;
+                if (selectedIndex >= Program.tasks.Count)
+                {
+                    selectedIndex = 0; // wrapping
+                    return selectedIndex;
+                }
+                break;
+            case ConsoleKey.Spacebar:
+                Program.ToggleTaskState(Program.tasks[selectedIndex].TaskID);
+                break;
         }
         return selectedIndex;
     }
